@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		71004E4B34B4D8CFB0BD2BE3 /* Pods_TPMFlix.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31E748F8B0AA9243914D09FE /* Pods_TPMFlix.framework */; };
+		BB3FED751FD31FF2004C67F1 /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3FED741FD31FF2004C67F1 /* MovieTableViewCell.swift */; };
 		BB578A481FD23A6900010AC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB578A471FD23A6900010AC7 /* AppDelegate.swift */; };
 		BB578A4D1FD23A6900010AC7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB578A4B1FD23A6900010AC7 /* Main.storyboard */; };
 		BB578A4F1FD23A6900010AC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB578A4E1FD23A6900010AC7 /* Assets.xcassets */; };
@@ -17,6 +18,7 @@
 
 /* Begin PBXFileReference section */
 		31E748F8B0AA9243914D09FE /* Pods_TPMFlix.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TPMFlix.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB3FED741FD31FF2004C67F1 /* MovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
 		BB578A441FD23A6900010AC7 /* TPMFlix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TPMFlix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB578A471FD23A6900010AC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BB578A4C1FD23A6900010AC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -48,6 +50,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		BB3FED731FD31FB0004C67F1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BB3FED741FD31FF2004C67F1 /* MovieTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		BB578A3B1FD23A6900010AC7 = {
 			isa = PBXGroup;
 			children = (
@@ -69,6 +79,7 @@
 		BB578A461FD23A6900010AC7 /* TPMFlix */ = {
 			isa = PBXGroup;
 			children = (
+				BB3FED731FD31FB0004C67F1 /* Views */,
 				BB578A591FD31AD800010AC7 /* ViewControllers */,
 				BB578A471FD23A6900010AC7 /* AppDelegate.swift */,
 				BB578A4B1FD23A6900010AC7 /* Main.storyboard */,
@@ -227,6 +238,7 @@
 			files = (
 				BB578A481FD23A6900010AC7 /* AppDelegate.swift in Sources */,
 				BB578A5B1FD31B0100010AC7 /* NowPlayingMoviewsViewController.swift in Sources */,
+				BB3FED751FD31FF2004C67F1 /* MovieTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
