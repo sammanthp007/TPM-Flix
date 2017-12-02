@@ -7,21 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		71004E4B34B4D8CFB0BD2BE3 /* Pods_TPMFlix.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31E748F8B0AA9243914D09FE /* Pods_TPMFlix.framework */; };
 		BB578A481FD23A6900010AC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB578A471FD23A6900010AC7 /* AppDelegate.swift */; };
-		BB578A4A1FD23A6900010AC7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB578A491FD23A6900010AC7 /* ViewController.swift */; };
 		BB578A4D1FD23A6900010AC7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB578A4B1FD23A6900010AC7 /* Main.storyboard */; };
 		BB578A4F1FD23A6900010AC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB578A4E1FD23A6900010AC7 /* Assets.xcassets */; };
 		BB578A521FD23A6900010AC7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB578A501FD23A6900010AC7 /* LaunchScreen.storyboard */; };
+		BB578A5B1FD31B0100010AC7 /* NowPlayingMoviewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB578A5A1FD31B0100010AC7 /* NowPlayingMoviewsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		31E748F8B0AA9243914D09FE /* Pods_TPMFlix.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TPMFlix.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB578A441FD23A6900010AC7 /* TPMFlix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TPMFlix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB578A471FD23A6900010AC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BB578A491FD23A6900010AC7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BB578A4C1FD23A6900010AC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BB578A4E1FD23A6900010AC7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BB578A511FD23A6900010AC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BB578A531FD23A6900010AC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BB578A5A1FD31B0100010AC7 /* NowPlayingMoviewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingMoviewsViewController.swift; sourceTree = "<group>"; };
+		C046811687F447BE38B5A58E /* Pods-TPMFlix.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TPMFlix.release.xcconfig"; path = "Pods/Target Support Files/Pods-TPMFlix/Pods-TPMFlix.release.xcconfig"; sourceTree = "<group>"; };
+		DEB24F24EADCB40EE6EDF1B5 /* Pods-TPMFlix.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TPMFlix.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TPMFlix/Pods-TPMFlix.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71004E4B34B4D8CFB0BD2BE3 /* Pods_TPMFlix.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9EDBF65B576A0BABBBD8ABDD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				31E748F8B0AA9243914D09FE /* Pods_TPMFlix.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		BB578A3B1FD23A6900010AC7 = {
 			isa = PBXGroup;
 			children = (
 				BB578A461FD23A6900010AC7 /* TPMFlix */,
 				BB578A451FD23A6900010AC7 /* Products */,
+				F2B00FD3B4FFD8A2FDD8207F /* Pods */,
+				9EDBF65B576A0BABBBD8ABDD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +69,31 @@
 		BB578A461FD23A6900010AC7 /* TPMFlix */ = {
 			isa = PBXGroup;
 			children = (
+				BB578A591FD31AD800010AC7 /* ViewControllers */,
 				BB578A471FD23A6900010AC7 /* AppDelegate.swift */,
-				BB578A491FD23A6900010AC7 /* ViewController.swift */,
 				BB578A4B1FD23A6900010AC7 /* Main.storyboard */,
 				BB578A4E1FD23A6900010AC7 /* Assets.xcassets */,
 				BB578A501FD23A6900010AC7 /* LaunchScreen.storyboard */,
 				BB578A531FD23A6900010AC7 /* Info.plist */,
 			);
 			path = TPMFlix;
+			sourceTree = "<group>";
+		};
+		BB578A591FD31AD800010AC7 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				BB578A5A1FD31B0100010AC7 /* NowPlayingMoviewsViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		F2B00FD3B4FFD8A2FDD8207F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DEB24F24EADCB40EE6EDF1B5 /* Pods-TPMFlix.debug.xcconfig */,
+				C046811687F447BE38B5A58E /* Pods-TPMFlix.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +103,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BB578A561FD23A6900010AC7 /* Build configuration list for PBXNativeTarget "TPMFlix" */;
 			buildPhases = (
+				2D1DBA3AFB2B0EA2460DC801 /* [CP] Check Pods Manifest.lock */,
 				BB578A401FD23A6900010AC7 /* Sources */,
 				BB578A411FD23A6900010AC7 /* Frameworks */,
 				BB578A421FD23A6900010AC7 /* Resources */,
+				799D8C9CA48E66BBE2D6FF88 /* [CP] Embed Pods Frameworks */,
+				A84991D992E01921F2125657 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -131,13 +166,67 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2D1DBA3AFB2B0EA2460DC801 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TPMFlix-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		799D8C9CA48E66BBE2D6FF88 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TPMFlix/Pods-TPMFlix-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TPMFlix/Pods-TPMFlix-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A84991D992E01921F2125657 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TPMFlix/Pods-TPMFlix-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		BB578A401FD23A6900010AC7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BB578A4A1FD23A6900010AC7 /* ViewController.swift in Sources */,
 				BB578A481FD23A6900010AC7 /* AppDelegate.swift in Sources */,
+				BB578A5B1FD31B0100010AC7 /* NowPlayingMoviewsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +361,7 @@
 		};
 		BB578A571FD23A6900010AC7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DEB24F24EADCB40EE6EDF1B5 /* Pods-TPMFlix.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -287,6 +377,7 @@
 		};
 		BB578A581FD23A6900010AC7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C046811687F447BE38B5A58E /* Pods-TPMFlix.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
