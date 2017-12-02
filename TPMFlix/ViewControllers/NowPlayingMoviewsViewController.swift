@@ -14,6 +14,7 @@ import AlamofireImage
 class NowPlayingMoviewsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
  
     @IBOutlet weak var moviesTableView: UITableView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     let urlWithAuth: String = "https://api.themoviedb.org/3/movie/now_playing?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed"
     
@@ -26,6 +27,9 @@ class NowPlayingMoviewsViewController: UIViewController, UITableViewDelegate, UI
         
         self.moviesTableView.delegate = self
         self.moviesTableView.dataSource = self
+        
+        // start animating activity indicator
+        self.activityIndicator.startAnimating()
         
         // Initialize a UIRefreshControl
         let refreshControl = UIRefreshControl()
@@ -41,6 +45,9 @@ class NowPlayingMoviewsViewController: UIViewController, UITableViewDelegate, UI
             print (self.movies)
             
             self.moviesTableView.reloadData()
+            
+            // tell the activity indicator to stop
+            self.activityIndicator.stopAnimating()
         }
         
     }
