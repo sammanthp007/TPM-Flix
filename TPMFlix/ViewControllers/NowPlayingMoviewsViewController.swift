@@ -9,6 +9,7 @@
 import UIKit
 
 import Alamofire
+import AlamofireImage
 
 class NowPlayingMoviewsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
  
@@ -51,12 +52,15 @@ class NowPlayingMoviewsViewController: UIViewController, UITableViewDelegate, UI
 
         movieCell.titleLabel.text = self.movies?[indexPath.row]["original_title"] as? String
         
+        let poster_base_url = "https://image.tmdb.org/t/p/w500"
+        
+        if let poster_path = self.movies?[indexPath.row]["poster_path"] as! String? {
+            let poster_url = URL(string: poster_base_url + poster_path)!
+            movieCell.posterImageView.af_setImage(withURL: poster_url)
+        }
+        
         return movieCell
     }
-    
-    
-    
-
     
     
     
