@@ -41,9 +41,7 @@ class NowPlayingMoviewsViewController: UIViewController, UITableViewDelegate, UI
         Alamofire.request(urlWithAuth).responseJSON { (response) in
             let res = response.result.value! as! NSDictionary
             self.movies = res["results"] as? [NSDictionary]
-            
-            print (self.movies)
-            
+                        
             self.moviesTableView.reloadData()
             
             // tell the activity indicator to stop
@@ -85,8 +83,6 @@ class NowPlayingMoviewsViewController: UIViewController, UITableViewDelegate, UI
         Alamofire.request(urlWithAuth).responseJSON { (response) in
             let res = response.result.value! as! NSDictionary
             self.movies = res["results"] as? [NSDictionary]
-            
-            print (self.movies)
             
             self.moviesTableView.reloadData()
             
