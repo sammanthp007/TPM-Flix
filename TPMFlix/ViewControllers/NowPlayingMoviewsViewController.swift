@@ -27,6 +27,13 @@ class NowPlayingMoviewsViewController: UIViewController, UITableViewDelegate, UI
         self.moviesTableView.delegate = self
         self.moviesTableView.dataSource = self
         
+        // Initialize a UIRefreshControl
+        let refreshControl = UIRefreshControl()
+        // add target
+        refreshControl.addTarget(self, action: #selector(refreshControlAction(_:)), for: UIControlEvents.valueChanged)
+        // add refresh control to table view
+        moviesTableView.insertSubview(refreshControl, at: 0)
+        
         Alamofire.request(urlWithAuth).responseJSON { (response) in
             let res = response.result.value! as! NSDictionary
             self.movies = res["results"] as? [NSDictionary]
@@ -63,7 +70,23 @@ class NowPlayingMoviewsViewController: UIViewController, UITableViewDelegate, UI
     }
     
     
-    
+    // Makes a network request to get updated data
+    // Updates the tableView with the new data
+    // Hides the RefreshControl
+    @objc func refreshControlAction(_ refreshControl: UIRefreshControl) {
+        
+        Alamofire.request(urlWithAuth).responseJSON { (response) in
+            let res = response.result.value! as! NSDictionary
+            self.movies = res["results"] as? [NSDictionary]
+            
+            print (self.movies)
+            
+            self.moviesTableView.reloadData()
+            
+            // Tell the refreshControl to stop spinning
+            refreshControl.endRefreshing()
+        }
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
