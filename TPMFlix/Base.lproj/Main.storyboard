@@ -116,7 +116,7 @@
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3eE-Zf-ipR">
-                                <rect key="frame" x="0.0" y="335" width="375" height="332"/>
+                                <rect key="frame" x="0.0" y="335" width="375" height="283"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guardians of Galaxy" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QPv-vE-ufR">
                                         <rect key="frame" x="188" y="32" width="125.5" height="60"/>
@@ -130,12 +130,16 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qbs-GT-OrI">
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qbs-GT-OrI">
                                         <rect key="frame" x="16" y="-104" width="156" height="235"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="235" id="0ss-Zb-nmq"/>
                                             <constraint firstAttribute="width" constant="156" id="gZ3-ds-5ag"/>
                                         </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="dSv-bc-tw5" appends="YES" id="oci-ak-53i"/>
+                                        </connections>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -156,6 +160,11 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="eje-B6-tXX">
+                                <rect key="frame" x="169" y="315" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -174,16 +183,57 @@
                         <viewLayoutGuide key="safeArea" id="dYC-F7-o0u"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="eje-B6-tXX" id="gUl-X7-vFz"/>
                         <outlet property="backDropImageView" destination="dBp-4a-fmD" id="Gj6-wE-CfQ"/>
                         <outlet property="overviewLabel" destination="JBF-tq-M5r" id="BJ3-cY-kF8"/>
                         <outlet property="posterImageView" destination="Qbs-GT-OrI" id="hL5-uA-HuD"/>
                         <outlet property="releaseDate" destination="MKJ-QS-c4i" id="aWK-Um-1Z5"/>
                         <outlet property="titleLabel" destination="QPv-vE-ufR" id="tEz-Kt-YJJ"/>
+                        <segue destination="hZ6-EW-PiT" kind="show" identifier="toWebView" id="OI1-0Z-h1E"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6S3-cG-W67" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="dSv-bc-tw5">
+                    <connections>
+                        <action selector="onPosterImageTap:" destination="TBj-UH-1Sq" id="PWS-cd-v3Q"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1668" y="25.637181409295355"/>
+        </scene>
+        <!--Movie Trailer View Controller-->
+        <scene sceneID="5Ko-8d-5pw">
+            <objects>
+                <viewController id="hZ6-EW-PiT" customClass="MovieTrailerViewController" customModule="TPMFlix" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2cp-hC-4aZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mmm-rU-aCY">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="mmm-rU-aCY" firstAttribute="bottom" secondItem="J1q-wv-STW" secondAttribute="bottom" id="R4A-rY-IAR"/>
+                            <constraint firstItem="mmm-rU-aCY" firstAttribute="trailing" secondItem="J1q-wv-STW" secondAttribute="trailing" id="ge2-ZG-Cvs"/>
+                            <constraint firstItem="mmm-rU-aCY" firstAttribute="leading" secondItem="J1q-wv-STW" secondAttribute="leading" id="nc9-Q6-Uwz"/>
+                            <constraint firstItem="mmm-rU-aCY" firstAttribute="top" secondItem="2cp-hC-4aZ" secondAttribute="top" id="sK8-V5-9yW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="J1q-wv-STW"/>
+                    </view>
+                    <connections>
+                        <outlet property="videoWebKitView" destination="mmm-rU-aCY" id="hGK-sh-Rmq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tV9-sh-tCZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2701.5999999999999" y="35.532233883058474"/>
         </scene>
         <!--Now Playing-->
         <scene sceneID="S3Z-Tx-Aq1">
