@@ -233,8 +233,8 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ODe-Ie-T3u">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="zz1-Ch-kM1">
-                                    <size key="itemSize" width="129" height="210"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="2" minimumInteritemSpacing="2" id="zz1-Ch-kM1">
+                                    <size key="itemSize" width="130" height="220"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -246,22 +246,22 @@
                                 </activityIndicatorView>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="movieCollectionViewCell" id="Hut-Nm-T3h" customClass="MovieCollectionViewCell" customModule="TPMFlix" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="129" height="210"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="130" height="220"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="129" height="210"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="130" height="220"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RVx-QM-Fu4">
-                                                    <rect key="frame" x="4" y="4" width="121" height="202"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="130" height="220"/>
                                                 </imageView>
                                             </subviews>
                                         </view>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="RVx-QM-Fu4" secondAttribute="trailing" constant="4" id="DyF-1B-8D1"/>
-                                            <constraint firstAttribute="bottom" secondItem="RVx-QM-Fu4" secondAttribute="bottom" constant="4" id="LTr-hC-IoG"/>
-                                            <constraint firstItem="RVx-QM-Fu4" firstAttribute="leading" secondItem="Hut-Nm-T3h" secondAttribute="leading" constant="4" id="g8u-5x-qbc"/>
-                                            <constraint firstItem="RVx-QM-Fu4" firstAttribute="top" secondItem="Hut-Nm-T3h" secondAttribute="top" constant="4" id="liP-2j-gGV"/>
+                                            <constraint firstItem="RVx-QM-Fu4" firstAttribute="top" secondItem="Hut-Nm-T3h" secondAttribute="top" id="3V5-HZ-vBB"/>
+                                            <constraint firstAttribute="trailing" secondItem="RVx-QM-Fu4" secondAttribute="trailing" id="ERg-GQ-QOJ"/>
+                                            <constraint firstAttribute="bottom" secondItem="RVx-QM-Fu4" secondAttribute="bottom" id="IRj-HQ-X5b"/>
+                                            <constraint firstItem="RVx-QM-Fu4" firstAttribute="leading" secondItem="Hut-Nm-T3h" secondAttribute="leading" id="WTz-FT-fvq"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="posterImageView" destination="RVx-QM-Fu4" id="77v-hJ-c2C"/>
@@ -288,7 +288,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bUJ-MK-KcL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-128.5" y="1037.5"/>
+            <point key="canvasLocation" x="-128.80000000000001" y="1036.7316341829087"/>
         </scene>
         <!--Superhero-->
         <scene sceneID="s0E-Wn-d72">

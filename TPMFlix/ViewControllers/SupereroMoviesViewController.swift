@@ -31,6 +31,20 @@ class SupereroMoviesViewController: UIViewController, UICollectionViewDataSource
         // start animating activity indicator
         self.activityIndicator.startAnimating()
         
+        let layout = self.moviesCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        
+        let itemPerRow: CGFloat = 3
+        let interItemSpacing: CGFloat = 1
+        
+        layout.minimumInteritemSpacing = interItemSpacing
+        layout.minimumLineSpacing = layout.minimumInteritemSpacing
+        
+        let widthOfRow = self.moviesCollectionView.frame.size.width
+        let totalSpacing = interItemSpacing * (itemPerRow - 1)
+        let widthOfItem = (widthOfRow - totalSpacing) / itemPerRow
+
+        layout.itemSize = CGSize(width: widthOfItem, height: widthOfItem * 1.5)
+        
         Alamofire.request(urlWithAuth).responseJSON { (response) in
             let res = response.result.value! as! NSDictionary
             self.movies = res["results"] as? [NSDictionary]
