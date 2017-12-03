@@ -130,13 +130,13 @@ Time spent: **X** hours spent in total
 The following **required** user stories are complete:
 
 - The following screens use AutoLayout to adapt to various orientations and screen sizes
-   - [ ] Movie feed view (+3pt)
-   - [ ] Detail view (+2pt)
+   - [x] Movie feed view (+3pt)
+   - [x] Detail view (+2pt)
 
 The following **optional** user stories are implemented:
 
-- [ ] Dynamic Height Cells (+1)
-- [ ] Collection View AutoLayout (+2)
+- [x] Dynamic Height Cells (+1)
+- [x] Collection View AutoLayout (+2)
 
 The following **additional** user stories are implemented:
 
@@ -151,7 +151,7 @@ Please list two areas of the assignment you'd like to **discuss further with you
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+![Video Walkthrough](videowalkthrough-week3.gif)
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 

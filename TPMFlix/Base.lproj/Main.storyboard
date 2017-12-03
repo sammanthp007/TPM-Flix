@@ -28,11 +28,11 @@
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MovieCell" rowHeight="224" id="hOQ-oC-5WH" customClass="MovieTableViewCell" customModule="TPMFlix" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="480" height="224"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hOQ-oC-5WH" id="Ozi-no-Ygd">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hOQ-oC-5WH" id="Ozi-no-Ygd">
                                             <rect key="frame" x="0.0" y="0.0" width="480" height="223.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="now_playing_tabbar_item" translatesAutoresizingMaskIntoConstraints="NO" id="1m6-8e-jta">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="now_playing_tabbar_item" translatesAutoresizingMaskIntoConstraints="NO" id="1m6-8e-jta">
                                                     <rect key="frame" x="23" y="19" width="135" height="170"/>
                                                     <color key="backgroundColor" red="0.086939452235900272" green="0.66428637423861847" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <constraints>
@@ -40,14 +40,14 @@
                                                         <constraint firstAttribute="height" constant="170" id="zlh-fs-dI8"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nUZ-7p-oCp">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nUZ-7p-oCp">
                                                     <rect key="frame" x="166" y="19" width="51.5" height="30"/>
                                                     <color key="backgroundColor" red="0.17661350494871375" green="1" blue="0.78104350459938543" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="The story of four characters went." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ifh-UL-Hk8">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The story of four characters went." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ifh-UL-Hk8">
                                                     <rect key="frame" x="166" y="57" width="284.5" height="23"/>
                                                     <color key="backgroundColor" red="0.77030730293023508" green="0.88052459149756046" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="19"/>
@@ -58,7 +58,7 @@
                                             <constraints>
                                                 <constraint firstItem="Ifh-UL-Hk8" firstAttribute="leading" secondItem="1m6-8e-jta" secondAttribute="trailing" constant="8" id="2qA-Jt-Pnn"/>
                                                 <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="nUZ-7p-oCp" secondAttribute="trailing" constant="8" id="7Y3-rp-gia"/>
-                                                <constraint firstAttribute="bottom" secondItem="1m6-8e-jta" secondAttribute="bottom" constant="8" id="94c-oc-IbR"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="1m6-8e-jta" secondAttribute="bottom" constant="8" id="94c-oc-IbR"/>
                                                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Ifh-UL-Hk8" secondAttribute="bottom" constant="8" id="CkY-pV-jSS"/>
                                                 <constraint firstItem="1m6-8e-jta" firstAttribute="top" secondItem="Ozi-no-Ygd" secondAttribute="topMargin" constant="8" id="EeO-BX-avY"/>
                                                 <constraint firstItem="1m6-8e-jta" firstAttribute="leading" secondItem="Ozi-no-Ygd" secondAttribute="leadingMargin" constant="8" id="Nd9-x5-w8n"/>
