@@ -123,7 +123,7 @@ Describe any challenges encountered while building the app.
 
 **TPMFlix** is a photo browsing app app using the [The Tumblr API](https://www.tumblr.com/docs/en/api/v2#posts).
 
-Time spent: **X** hours spent in total
+Time spent: **1** hour spent in total
 
 ## User Stories
 
