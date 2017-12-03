@@ -74,14 +74,19 @@ class SupereroMoviesViewController: UIViewController, UICollectionViewDataSource
     }
     
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
+        let detailedViewController = segue.destination as! MovieDetailsViewController
+        
         // Pass the selected object to the new view controller.
+        let item = sender as! UICollectionViewCell
+        
+        let indexPath = self.moviesCollectionView.indexPath(for: item)!
+        
+        detailedViewController.movie = self.movies![indexPath.row]
     }
-    */
 
 }
