@@ -10,6 +10,8 @@
 		71004E4B34B4D8CFB0BD2BE3 /* Pods_TPMFlix.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31E748F8B0AA9243914D09FE /* Pods_TPMFlix.framework */; };
 		BB3FED751FD31FF2004C67F1 /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3FED741FD31FF2004C67F1 /* MovieTableViewCell.swift */; };
 		BB3FED771FD34B88004C67F1 /* MovieDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3FED761FD34B88004C67F1 /* MovieDetailsViewController.swift */; };
+		BB3FED791FD3C0E2004C67F1 /* SupereroMoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3FED781FD3C0E2004C67F1 /* SupereroMoviesViewController.swift */; };
+		BB3FED7B1FD3C2C6004C67F1 /* MovieCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3FED7A1FD3C2C6004C67F1 /* MovieCollectionViewCell.swift */; };
 		BB578A481FD23A6900010AC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB578A471FD23A6900010AC7 /* AppDelegate.swift */; };
 		BB578A4D1FD23A6900010AC7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB578A4B1FD23A6900010AC7 /* Main.storyboard */; };
 		BB578A4F1FD23A6900010AC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB578A4E1FD23A6900010AC7 /* Assets.xcassets */; };
@@ -21,6 +23,8 @@
 		31E748F8B0AA9243914D09FE /* Pods_TPMFlix.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TPMFlix.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB3FED741FD31FF2004C67F1 /* MovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
 		BB3FED761FD34B88004C67F1 /* MovieDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsViewController.swift; sourceTree = "<group>"; };
+		BB3FED781FD3C0E2004C67F1 /* SupereroMoviesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupereroMoviesViewController.swift; sourceTree = "<group>"; };
+		BB3FED7A1FD3C2C6004C67F1 /* MovieCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionViewCell.swift; sourceTree = "<group>"; };
 		BB578A441FD23A6900010AC7 /* TPMFlix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TPMFlix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB578A471FD23A6900010AC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BB578A4C1FD23A6900010AC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -56,6 +60,7 @@
 			isa = PBXGroup;
 			children = (
 				BB3FED741FD31FF2004C67F1 /* MovieTableViewCell.swift */,
+				BB3FED7A1FD3C2C6004C67F1 /* MovieCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -97,6 +102,7 @@
 			children = (
 				BB578A5A1FD31B0100010AC7 /* NowPlayingMoviewsViewController.swift */,
 				BB3FED761FD34B88004C67F1 /* MovieDetailsViewController.swift */,
+				BB3FED781FD3C0E2004C67F1 /* SupereroMoviesViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -242,7 +248,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB3FED771FD34B88004C67F1 /* MovieDetailsViewController.swift in Sources */,
+				BB3FED791FD3C0E2004C67F1 /* SupereroMoviesViewController.swift in Sources */,
 				BB578A481FD23A6900010AC7 /* AppDelegate.swift in Sources */,
+				BB3FED7B1FD3C2C6004C67F1 /* MovieCollectionViewCell.swift in Sources */,
 				BB578A5B1FD31B0100010AC7 /* NowPlayingMoviewsViewController.swift in Sources */,
 				BB3FED751FD31FF2004C67F1 /* MovieTableViewCell.swift in Sources */,
 			);
