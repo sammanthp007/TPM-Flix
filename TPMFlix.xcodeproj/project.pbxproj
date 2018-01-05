@@ -18,6 +18,7 @@
 		BB578A4F1FD23A6900010AC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB578A4E1FD23A6900010AC7 /* Assets.xcassets */; };
 		BB578A521FD23A6900010AC7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB578A501FD23A6900010AC7 /* LaunchScreen.storyboard */; };
 		BB578A5B1FD31B0100010AC7 /* NowPlayingMoviewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB578A5A1FD31B0100010AC7 /* NowPlayingMoviewsViewController.swift */; };
+		BBD7422520000A2F009207A7 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD7422420000A2F009207A7 /* Movie.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		BB578A511FD23A6900010AC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BB578A531FD23A6900010AC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BB578A5A1FD31B0100010AC7 /* NowPlayingMoviewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingMoviewsViewController.swift; sourceTree = "<group>"; };
+		BBD7422420000A2F009207A7 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		C046811687F447BE38B5A58E /* Pods-TPMFlix.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TPMFlix.release.xcconfig"; path = "Pods/Target Support Files/Pods-TPMFlix/Pods-TPMFlix.release.xcconfig"; sourceTree = "<group>"; };
 		DEB24F24EADCB40EE6EDF1B5 /* Pods-TPMFlix.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TPMFlix.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TPMFlix/Pods-TPMFlix.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -88,6 +90,7 @@
 		BB578A461FD23A6900010AC7 /* TPMFlix */ = {
 			isa = PBXGroup;
 			children = (
+				BBD74223200009F1009207A7 /* Models */,
 				BB3FED731FD31FB0004C67F1 /* Views */,
 				BB578A591FD31AD800010AC7 /* ViewControllers */,
 				BB578A471FD23A6900010AC7 /* AppDelegate.swift */,
@@ -108,6 +111,14 @@
 				BB3FED7C1FD3D77C004C67F1 /* MovieTrailerViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		BBD74223200009F1009207A7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BBD7422420000A2F009207A7 /* Movie.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		F2B00FD3B4FFD8A2FDD8207F /* Pods */ = {
@@ -256,6 +267,7 @@
 				BB578A481FD23A6900010AC7 /* AppDelegate.swift in Sources */,
 				BB3FED7B1FD3C2C6004C67F1 /* MovieCollectionViewCell.swift in Sources */,
 				BB578A5B1FD31B0100010AC7 /* NowPlayingMoviewsViewController.swift in Sources */,
+				BBD7422520000A2F009207A7 /* Movie.swift in Sources */,
 				BB3FED751FD31FF2004C67F1 /* MovieTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
