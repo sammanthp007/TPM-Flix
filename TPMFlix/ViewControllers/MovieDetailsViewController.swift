@@ -20,7 +20,7 @@ class MovieDetailsViewController: UIViewController {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 
     
-    var movie: NSDictionary?
+    var movie: Movie?
     
     // Hack for now to save trailer url
     var trailerURLString: String = ""
@@ -32,32 +32,18 @@ class MovieDetailsViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         if let movie = self.movie {
-            self.titleLabel.text = movie["title"] as? String
-            self.overviewLabel.text = movie["overview"] as? String
-            self.releaseDate.text = movie["release_date"] as? String
-            let backdrop_path = movie["backdrop_path"] as! String
-            let baseURLString = "https://image.tmdb.org/t/p/w500"
+            self.titleLabel.text = movie.title
+            self.overviewLabel.text = movie.description
+            self.releaseDate.text = movie.releaseDate
+            self.backDropImageView.af_setImage(withURL: movie.backDropUrl!)
             
-            let backDropURL = URL (string: baseURLString + backdrop_path)!
-            self.backDropImageView.af_setImage(withURL: backDropURL)
-            
-            if let posterPath = movie["poster_path"] as? String {
-                let posterURL = URL(string: baseURLString + posterPath)!
-                self.posterImageView.af_setImage(withURL: posterURL)
-            }
-            else {
-                self.posterImageView = nil
-            }
+
             
             // make a network call to get youtube key. bad location, but hack for now
             
             activityIndicator.startAnimating()
-
-            let movieID = movie["id"]!
             
-            let urlWithAuth: String = "https://api.themoviedb.org/3/movie/\(movieID)/videos?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed&language=en-US"
-
-            Alamofire.request(urlWithAuth).responseJSON { (response) in
+            Alamofire.request(movie.urlWithAuth).responseJSON { (response) in
                 let res = response.result.value! as! NSDictionary
                 if let allVideos = res["results"] as? [NSDictionary] {
                     let trailerKey = allVideos[0]["key"] as! String

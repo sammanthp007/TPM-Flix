@@ -18,7 +18,7 @@ class NowPlayingMoviewsViewController: UIViewController, UITableViewDelegate, UI
     
     let urlWithAuth: String = "https://api.themoviedb.org/3/movie/now_playing?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed"
     
-    var movies: [NSDictionary]? = []
+    var movies: [Movie]? = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +40,7 @@ class NowPlayingMoviewsViewController: UIViewController, UITableViewDelegate, UI
         
         Alamofire.request(urlWithAuth).responseJSON { (response) in
             let res = response.result.value! as! NSDictionary
-            self.movies = res["results"] as? [NSDictionary]
+            self.movies = Movie.movies(dictionaries: (res["results"] as? [NSDictionary])! as! [[String : Any]])
             
             self.moviesTableView.reloadData()
             
@@ -60,16 +60,11 @@ class NowPlayingMoviewsViewController: UIViewController, UITableViewDelegate, UI
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let movieCell = self.moviesTableView.dequeueReusableCell(withIdentifier: "MovieCell", for: indexPath) as! MovieTableViewCell
         
-        movieCell.descriptionLabel.text = self.movies?[indexPath.row]["overview"] as? String
+        movieCell.descriptionLabel.text = self.movies?[indexPath.row].description
 
-        movieCell.titleLabel.text = self.movies?[indexPath.row]["original_title"] as? String
+        movieCell.titleLabel.text = self.movies?[indexPath.row].title
         
-        let poster_base_url = "https://image.tmdb.org/t/p/w500"
-        
-        if let poster_path = self.movies?[indexPath.row]["poster_path"] as! String? {
-            let poster_url = URL(string: poster_base_url + poster_path)!
-            movieCell.posterImageView.af_setImage(withURL: poster_url)
-        }
+        movieCell.posterImageView.af_setImage(withURL: (self.movies?[indexPath.row].posterUrl)!)
         
         return movieCell
     }
@@ -79,10 +74,9 @@ class NowPlayingMoviewsViewController: UIViewController, UITableViewDelegate, UI
     // Updates the tableView with the new data
     // Hides the RefreshControl
     @objc func refreshControlAction(_ refreshControl: UIRefreshControl) {
-        
         Alamofire.request(urlWithAuth).responseJSON { (response) in
             let res = response.result.value! as! NSDictionary
-            self.movies = res["results"] as? [NSDictionary]
+            self.movies = Movie.movies(dictionaries: (res["results"] as? [NSDictionary])! as! [[String : Any]])
             
             self.moviesTableView.reloadData()
             
@@ -109,7 +103,7 @@ class NowPlayingMoviewsViewController: UIViewController, UITableViewDelegate, UI
         
         let indexPath = self.moviesTableView.indexPath(for: cell)!
         
-        detailedViewController.movie = self.movies![indexPath.row]
+         detailedViewController.movie = self.movies![indexPath.row]
     }
 
 }

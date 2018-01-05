@@ -20,7 +20,7 @@ class SupereroMoviesViewController: UIViewController, UICollectionViewDataSource
     
     let urlWithAuth: String = "https://api.themoviedb.org/3/movie/now_playing?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed"
 
-    var movies: [NSDictionary]? = []
+    var movies: [Movie]? = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,8 +47,8 @@ class SupereroMoviesViewController: UIViewController, UICollectionViewDataSource
         
         Alamofire.request(urlWithAuth).responseJSON { (response) in
             let res = response.result.value! as! NSDictionary
-            self.movies = res["results"] as? [NSDictionary]
-            
+            self.movies = Movie.movies(dictionaries: (res["results"] as? [NSDictionary])! as! [[String : Any]])
+                        
             self.moviesCollectionView.reloadData()
             
             // tell the activity indicator to stop
@@ -72,10 +72,7 @@ class SupereroMoviesViewController: UIViewController, UICollectionViewDataSource
         
         let poster_base_url = "https://image.tmdb.org/t/p/w500"
         
-        if let poster_path = self.movies?[indexPath.row]["poster_path"] as! String? {
-            let poster_url = URL(string: poster_base_url + poster_path)!
-            movieCell.posterImageView.af_setImage(withURL: poster_url)
-        }
+        movieCell.posterImageView.af_setImage(withURL: (self.movies?[indexPath.row].posterUrl)!)
         
         return movieCell
     }
