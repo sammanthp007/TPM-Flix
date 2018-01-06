@@ -60,11 +60,7 @@ class NowPlayingMoviewsViewController: UIViewController, UITableViewDelegate, UI
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let movieCell = self.moviesTableView.dequeueReusableCell(withIdentifier: "MovieCell", for: indexPath) as! MovieTableViewCell
         
-        movieCell.descriptionLabel.text = self.movies?[indexPath.row].description
-
-        movieCell.titleLabel.text = self.movies?[indexPath.row].title
-        
-        movieCell.posterImageView.af_setImage(withURL: (self.movies?[indexPath.row].posterUrl)!)
+        movieCell.movie = self.movies![indexPath.row]
         
         return movieCell
     }

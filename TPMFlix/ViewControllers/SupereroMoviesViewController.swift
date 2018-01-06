@@ -33,7 +33,7 @@ class SupereroMoviesViewController: UIViewController, UICollectionViewDataSource
         
         let layout = self.moviesCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
         
-        let itemPerRow: CGFloat = 3
+        let itemPerRow: CGFloat = 4
         let interItemSpacing: CGFloat = 1
         
         layout.minimumInteritemSpacing = interItemSpacing
@@ -69,7 +69,7 @@ class SupereroMoviesViewController: UIViewController, UICollectionViewDataSource
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let movieCell = self.moviesCollectionView.dequeueReusableCell(withReuseIdentifier: "movieCollectionViewCell", for: indexPath) as! MovieCollectionViewCell
         
-        movieCell.posterImageView.af_setImage(withURL: (self.movies?[indexPath.row].posterUrl)!)
+        movieCell.movie = self.movies?[indexPath.row]
         
         return movieCell
     }
