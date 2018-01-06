@@ -16,8 +16,6 @@ class NowPlayingMoviewsViewController: UIViewController, UITableViewDelegate, UI
     @IBOutlet weak var moviesTableView: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
-    let urlWithAuth: String = "https://api.themoviedb.org/3/movie/now_playing?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed"
-    
     var movies: [Movie]? = []
 
     override func viewDidLoad() {
@@ -70,14 +68,15 @@ class NowPlayingMoviewsViewController: UIViewController, UITableViewDelegate, UI
     // Updates the tableView with the new data
     // Hides the RefreshControl
     @objc func refreshControlAction(_ refreshControl: UIRefreshControl) {
-        Alamofire.request(urlWithAuth).responseJSON { (response) in
-            let res = response.result.value! as! NSDictionary
-            self.movies = Movie.movies(dictionaries: (res["results"] as? [NSDictionary])! as! [[String : Any]])
-            
-            self.moviesTableView.reloadData()
-            
-            // Tell the refreshControl to stop spinning
-            refreshControl.endRefreshing()
+        
+        MovieApiManager().getNowPlayingMovies { (returned_movies: [Movie]?, error: Error?) in
+            if let movies = returned_movies {
+                self.movies = movies
+                self.moviesTableView.reloadData()
+                
+                // Tell the refreshControl to stop spinning
+                refreshControl.endRefreshing()
+            }
         }
     }
     

@@ -17,9 +17,6 @@ class SupereroMoviesViewController: UIViewController, UICollectionViewDataSource
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
-    
-    let urlWithAuth: String = "https://api.themoviedb.org/3/movie/now_playing?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed"
-
     var movies: [Movie]? = []
     
     override func viewDidLoad() {
@@ -45,14 +42,11 @@ class SupereroMoviesViewController: UIViewController, UICollectionViewDataSource
 
         layout.itemSize = CGSize(width: widthOfItem, height: widthOfItem * 1.5)
         
-        Alamofire.request(urlWithAuth).responseJSON { (response) in
-            let res = response.result.value! as! NSDictionary
-            self.movies = Movie.movies(dictionaries: (res["results"] as? [NSDictionary])! as! [[String : Any]])
-                        
-            self.moviesCollectionView.reloadData()
-            
-            // tell the activity indicator to stop
-            self.activityIndicator.stopAnimating()
+        MovieApiManager().getNowPlayingMovies { (returned_movies: [Movie]?, error: Error?) in
+            if let movies = returned_movies {
+                self.movies = movies
+                self.moviesCollectionView.reloadData()
+            }
         }
     }
 
