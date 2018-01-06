@@ -69,9 +69,6 @@ class SupereroMoviesViewController: UIViewController, UICollectionViewDataSource
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let movieCell = self.moviesCollectionView.dequeueReusableCell(withReuseIdentifier: "movieCollectionViewCell", for: indexPath) as! MovieCollectionViewCell
         
-        
-        let poster_base_url = "https://image.tmdb.org/t/p/w500"
-        
         movieCell.posterImageView.af_setImage(withURL: (self.movies?[indexPath.row].posterUrl)!)
         
         return movieCell

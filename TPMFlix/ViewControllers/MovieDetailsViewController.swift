@@ -36,6 +36,7 @@ class MovieDetailsViewController: UIViewController {
             self.overviewLabel.text = movie.description
             self.releaseDate.text = movie.releaseDate
             self.backDropImageView.af_setImage(withURL: movie.backDropUrl!)
+            self.posterImageView.af_setImage(withURL: movie.posterUrl!)
             
 
             
