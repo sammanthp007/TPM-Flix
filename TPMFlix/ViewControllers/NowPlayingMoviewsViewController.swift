@@ -38,14 +38,14 @@ class NowPlayingMoviewsViewController: UIViewController, UITableViewDelegate, UI
         // add refresh control to table view
         moviesTableView.insertSubview(refreshControl, at: 0)
         
-        Alamofire.request(urlWithAuth).responseJSON { (response) in
-            let res = response.result.value! as! NSDictionary
-            self.movies = Movie.movies(dictionaries: (res["results"] as? [NSDictionary])! as! [[String : Any]])
-            
-            self.moviesTableView.reloadData()
-            
-            // tell the activity indicator to stop
-            self.activityIndicator.stopAnimating()
+        MovieApiManager().getNowPlayingMovies { (returned_movies: [Movie]?, error: Error?) in
+            if let movies = returned_movies {
+                self.movies = movies
+                self.moviesTableView.reloadData()
+                
+                // tell the activity indicator to stop
+                self.activityIndicator.stopAnimating()
+            }
         }
         
     }
